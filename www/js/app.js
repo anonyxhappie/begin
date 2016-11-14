@@ -1,4 +1,4 @@
-var theApp = angular.module('starter', ['ionic'])
+var theApp = angular.module('app', ['ionic','app.controller'])
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
     if(window.cordova && window.cordova.plugins.Keyboard) {
@@ -23,7 +23,11 @@ var theApp = angular.module('starter', ['ionic'])
     .state('mod-main', {
       url: "/main",
       templateUrl: "/templates/main.html"
-  });
+    })
+    .state('uilist', {
+      url: "/ui/list",
+      templateUrl: "/templates/cmp/infinite_list.html"
+    });
 
   $urlRouterProvider.otherwise('/dispatch');
 });
